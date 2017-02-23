@@ -32,7 +32,7 @@ public class RequestIdFilter implements Filter, RequestIdProvider {
             // get the request id
             String id = null;
             if (request instanceof HttpServletRequest) {
-                ((HttpServletRequest) request).getHeader(REQUEST_ID_HEADER);
+                id = ((HttpServletRequest) request).getHeader(REQUEST_ID_HEADER);
             }
             if (isEmpty(id)) {
                 id = UUID.randomUUID().toString();
